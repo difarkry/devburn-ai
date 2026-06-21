@@ -43,7 +43,7 @@ Aplikasi web prediksi burnout programmer berbasis Machine Learning (XGBoost) den
 ### 1. Clone repo
 
 ```bash
-git clone https://github.com/USERNAME/burnout-predictor.git
+git clone https://github.com/difarkry/devburn-ai.git
 cd burnout-predictor
 ```
 
@@ -127,3 +127,5 @@ window.APP_CONFIG = {
 ## Disclaimer
 
 Aplikasi ini bukan alat diagnosis medis. Hasil prediksi hanya berbasis data dan tidak menggantikan saran profesional kesehatan mental.
+
+Model bisa didownload di G-Drive : https://drive.google.com/file/d/1YBUtUF8jSifJfjRBkU9FsSjOfW-36uNE/view?usp=sharing
