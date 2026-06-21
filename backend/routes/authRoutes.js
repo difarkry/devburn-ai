@@ -12,6 +12,9 @@ router.post('/verify-otp', otpLimiter, verifyOtp);
 router.post('/resend-otp', otpLimiter, resendOtp);
 router.post('/login', loginLimiter, login);
 router.post('/logout', logout);
+router.get('/me', require('../middleware/authMiddleware'), (req, res) => {
+  res.json({ success: true, userId: req.user.userId, role: req.user.role });
+});
 router.post('/forgot-password', forgotPassword);
 router.post('/verify-reset-otp', verifyResetOtp);
 router.post('/reset-password', resetPassword);
