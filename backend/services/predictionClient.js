@@ -1,64 +1,34 @@
-const http = require('http');
-const https = require('https');
+const { predict: xgbPredict } = require('./xgbInference');
+
+// Feature order expected by the model
+const MODEL_FEATURES = ['daily_work_hours', 'bugs_per_day', 'meetings_per_day', 'caffeine_intake', 'sleep_hours'];
+
+const BURNOUT_LABELS = { 0: 'Low', 1: 'Medium', 2: 'High' };
+
+const RECOMMENDATIONS = {
+  Low: 'Burnout Anda rendah. Pertahankan keseimbangan kerja-hidup yang baik, jaga pola tidur dan olahraga rutin.',
+  Medium: 'Burnout Anda sedang. Pertimbangkan untuk mengurangi jam kerja, tingkatkan waktu istirahat, dan bicarakan dengan tim tentang beban kerja.',
+  High: 'Burnout Anda tinggi. Segera kurangi beban kerja, ambil cuti jika memungkinkan, dan pertimbangkan konsultasi dengan profesional kesehatan mental.'
+};
 
 /**
- * Call the Python prediction service.
- * @param {object} features - 10 numeric feature fields
- * @returns {Promise<{burnout_level: string, confidence: number, recommendation: string}>}
+ * Run prediction locally using pure JS XGBoost inference.
+ * No Python service needed — works on Vercel serverless.
+ * @param {object} features - input fields from user
+ * @returns {{ burnout_level: string, confidence: number, recommendation: string }}
  */
-function callPredict(features) {
-  return new Promise((resolve, reject) => {
-    const serviceUrl = process.env.PREDICTION_SERVICE_URL || 'http://localhost:5001';
-    const url = new URL('/predict', serviceUrl);
-    const body = JSON.stringify(features);
+async function callPredict(features) {
+  const featureVector = MODEL_FEATURES.map(f => Number(features[f]));
+  const { classIndex, probabilities } = xgbPredict(featureVector);
 
-    const options = {
-      hostname: url.hostname,
-      port: url.port || (url.protocol === 'https:' ? 443 : 80),
-      path: url.pathname,
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(body)
-      }
-    };
+  const burnout_level = BURNOUT_LABELS[classIndex] || 'Medium';
+  const confidence = Math.round(probabilities[classIndex] * 10000) / 10000;
 
-    const transport = url.protocol === 'https:' ? https : http;
-    const req = transport.request(options, (res) => {
-      let data = '';
-      res.on('data', chunk => { data += chunk; });
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          if (res.statusCode >= 400) {
-            const err = new Error(parsed.error || 'Prediction service error');
-            err.status = res.statusCode;
-            return reject(err);
-          }
-          resolve(parsed);
-        } catch (e) {
-          reject(new Error('Invalid response from prediction service'));
-        }
-      });
-    });
-
-    req.setTimeout(10000, () => {
-      req.destroy();
-      const err = new Error('Layanan prediksi tidak tersedia. Coba lagi nanti.');
-      err.status = 503;
-      reject(err);
-    });
-
-    req.on('error', (e) => {
-      console.error('[PredictionClient] Connection error:', e.message, '| URL:', serviceUrl);
-      const err = new Error('Layanan prediksi tidak tersedia. Coba lagi nanti.');
-      err.status = 503;
-      reject(err);
-    });
-
-    req.write(body);
-    req.end();
-  });
+  return {
+    burnout_level,
+    confidence,
+    recommendation: RECOMMENDATIONS[burnout_level]
+  };
 }
 
 module.exports = { callPredict };
