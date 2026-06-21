@@ -129,4 +129,6 @@ window.APP_CONFIG = {
 Aplikasi ini bukan alat diagnosis medis. Hasil prediksi hanya berbasis data dan tidak menggantikan saran profesional kesehatan mental.
 
 Model bisa didownload di G-Drive : https://drive.google.com/file/d/1YBUtUF8jSifJfjRBkU9FsSjOfW-36uNE/view?usp=sharing
+
+
 Link website-nya : devburn-ai.vercel.app
