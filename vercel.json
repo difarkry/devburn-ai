@@ -12,9 +12,19 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "backend/server.js" },
-    { "src": "/", "dest": "/public/pages/index.html" },
-    { "src": "/pages/(.*)", "dest": "/public/pages/$1" },
+    { "src": "/pages/index.html", "dest": "/public/pages/index.html" },
+    { "src": "/pages/login.html", "dest": "/public/pages/login.html" },
+    { "src": "/pages/register.html", "dest": "/public/pages/register.html" },
+    { "src": "/pages/verify.html", "dest": "/public/pages/verify.html" },
+    { "src": "/pages/forgot-password.html", "dest": "/public/pages/forgot-password.html" },
+    { "src": "/pages/reset-password.html", "dest": "/public/pages/reset-password.html" },
+    { "src": "/pages/dashboard.html", "dest": "/public/pages/dashboard.html" },
+    { "src": "/pages/predict.html", "dest": "/public/pages/predict.html" },
+    { "src": "/pages/chat.html", "dest": "/public/pages/chat.html" },
+    { "src": "/pages/history.html", "dest": "/public/pages/history.html" },
+    { "src": "/pages/admin.html", "dest": "/public/pages/admin.html" },
     { "src": "/css/(.*)", "dest": "/public/css/$1" },
-    { "src": "/js/(.*)", "dest": "/public/js/$1" }
+    { "src": "/js/(.*)", "dest": "/public/js/$1" },
+    { "src": "/", "dest": "/public/pages/index.html" }
   ]
 }

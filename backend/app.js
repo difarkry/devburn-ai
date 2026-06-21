@@ -5,6 +5,9 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
+// Trust Vercel/proxy headers (required for rate limiting and cookies)
+app.set('trust proxy', 1);
+
 // CORS
 const allowedOrigins = (process.env.FRONTEND_ORIGIN || 'http://localhost:3000').split(',').map(o => o.trim());
 app.use(cors({
