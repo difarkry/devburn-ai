@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 // Serve frontend static files (local dev only)
 if (process.env.NODE_ENV !== 'production') {
-  app.use(express.static('../frontend'));
+  app.use(express.static('../public'));
 }
 
 // Routes
