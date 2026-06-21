@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BurnoutPredictor — Prediksi Tingkat Burnout</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="navbar-brand">BurnoutPredictor</span>
+  <ul class="navbar-links" id="navbar-links">
+    <li><a href="login.html" class="btn btn-sm btn-dark" id="nav-login">Login</a></li>
+    <li><a href="register.html" class="btn btn-sm btn-primary" id="nav-register">Daftar</a></li>
+  </ul>
+</nav>
+
+<section style="background: var(--yellow); border-bottom: 3px solid #000; padding: 80px 24px; text-align: center;">
+  <div class="container">
+    <h1 style="font-size: 3rem; margin-bottom: 16px;">Seberapa Burned Out Kamu?</h1>
+    <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 28px;">Isi data kebiasaan kerjamu, dan biarkan AI memprediksi tingkat burnout-mu dalam hitungan detik.</p>
+    <a href="register.html" class="btn btn-dark btn-lg">Mulai Sekarang &rarr;</a>
+  </div>
+</section>
+
+<section class="section" style="background: var(--white); border-bottom: 3px solid #000;">
+  <div class="container">
+    <h2 style="margin-bottom: 24px;">Apa itu Burnout Programmer?</h2>
+    <div class="grid-3">
+      <div class="card card-blue">
+        <div class="card-title">Kelelahan Ekstrem</div>
+        <p>Merasa habis energi meski sudah istirahat. Tubuh dan pikiran terus-menerus terkuras oleh tekanan kerja.</p>
+      </div>
+      <div class="card" style="background: var(--orange);">
+        <div class="card-title">Sinisme & Apatis</div>
+        <p>Kehilangan motivasi, merasa tidak peduli dengan kualitas kode, dan menghindari tantangan baru.</p>
+      </div>
+      <div class="card card-red">
+        <div class="card-title" style="color: black;">Penurunan Performa</div>
+        <p style="color: #000;">Bug semakin sering, deadline terlewat, dan produktivitas menurun drastis meski jam kerja bertambah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom: 3px solid #000;">
+  <div class="container">
+    <h2 style="margin-bottom: 24px;">Fitur Aplikasi</h2>
+    <div class="grid-4">
+      <div class="card card-yellow">
+        <div class="card-title">Prediksi AI</div>
+        <p>Model XGBoost terlatih memprediksi level burnout dari data kebiasaan kerjamu.</p>
+      </div>
+      <div class="card card-blue">
+        <div class="card-title">Chat Burnout</div>
+        <p>Tanya apa saja tentang burnout ke AI asisten dengan konteks pengetahuan yang relevan.</p>
+      </div>
+      <div class="card card-green">
+        <div class="card-title">Dashboard</div>
+        <p>Pantau tren burnout-mu dari waktu ke waktu melalui dashboard riwayat prediksi.</p>
+      </div>
+      <div class="card" style="background: var(--purple);">
+        <div class="card-title">Export Data</div>
+        <p>Unduh riwayat prediksimu dalam format CSV atau PDF kapanpun dibutuhkan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--black); color: var(--white); text-align: center; border-bottom: 3px solid #000;">
+  <div class="container">
+    <h2 style="color: var(--yellow); margin-bottom: 16px;">Siap cek burnout-mu?</h2>
+    <p style="margin-bottom: 28px; opacity: 0.8;">Gratis, cepat, dan langsung dapat hasil. Mulai sekarang.</p>
+    <a href="register.html" class="btn btn-primary btn-lg" style="color: #000;">Daftar Gratis &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <p>DISCLAIMER: Aplikasi ini bukan alat diagnosis medis. Hasil prediksi hanya berbasis data dan tidak menggantikan saran profesional kesehatan mental.</p>
+  <p style="margin-top: 8px; opacity: 0.6;">© 2026 BurnoutPredictor</p>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/landing.js"></script>
+</body>
+</html>

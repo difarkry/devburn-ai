@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — BurnoutPredictor</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">BurnoutPredictor</a>
+  <ul class="navbar-links">
+    <li><a href="register.html" class="btn btn-sm btn-primary">Daftar</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrapper" style="display: flex; justify-content: center;">
+  <div class="card" style="width: 100%; max-width: 420px; margin-top: 20px;">
+    <h2 style="margin-bottom: 20px;">Login</h2>
+    <div id="alert-box"></div>
+    <form id="login-form" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="email" id="email" placeholder="john@example.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <div style="position: relative;">
+          <input class="form-control" type="password" id="password" placeholder="Password kamu" required style="padding-right: 44px;" />
+          <button type="button" id="toggle-pw" onclick="togglePw('password','toggle-pw')" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1.1rem;padding:0;">
+            <svg id="eye-pw" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+      <div style="text-align: right; margin-bottom: 16px;">
+        <a href="forgot-password.html" style="font-size: 0.85rem; font-weight: 700;">Lupa password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full" id="submit-btn">Login</button>
+    </form>
+    <p style="margin-top: 16px; text-align: center; font-size: 0.9rem;">Belum punya akun? <a href="register.html" style="font-weight: 800;">Daftar di sini</a></p>
+  </div>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script>
+function togglePw(inputId, btnId) {
+  const input = document.getElementById(inputId);
+  const isHidden = input.type === 'password';
+  input.type = isHidden ? 'text' : 'password';
+  document.getElementById(btnId).querySelector('svg').style.opacity = isHidden ? '0.5' : '1';
+}
+</script>
+<script src="../js/login.js"></script>
+</body>
+</html>

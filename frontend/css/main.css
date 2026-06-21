@@ -1,0 +1,121 @@
+/* ===== Neubrutalism Base Styles ===== */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --yellow: #FFE135;
+  --red: #FF4444;
+  --blue: #A8D8EA;
+  --green: #B8F0A0;
+  --purple: #D4A8FF;
+  --orange: #FFB347;
+  --bg: #FFFDF0;
+  --shadow: 4px 4px 0px var(--black);
+  --shadow-lg: 6px 6px 0px var(--black);
+  --border: 2px solid var(--black);
+  --border-thick: 3px solid var(--black);
+  --font-main: 'Space Grotesk', 'Arial Black', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --radius: 4px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--black);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== Navbar ===== */
+.navbar {
+  background: var(--yellow);
+  border-bottom: var(--border-thick);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Section ===== */
+.section {
+  padding: 60px 0;
+}
+
+/* ===== Toast ===== */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  padding: 12px 20px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  font-weight: 700;
+  border-radius: var(--radius);
+  min-width: 220px;
+  animation: slideIn 0.2s ease;
+}
+
+.toast-success { background: var(--green); }
+.toast-error { background: var(--red); color: var(--white); }
+.toast-info { background: var(--blue); }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ===== Page layout ===== */
+.page-wrapper {
+  min-height: calc(100vh - 60px);
+  padding: 40px 24px;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  border-top: var(--border-thick);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — BurnoutPredictor</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .dist-bar { display: flex; height: 32px; border: 2px solid #000; border-radius: 4px; overflow: hidden; margin-top: 12px; }
+    .dist-bar .bar-low    { background: var(--green); }
+    .dist-bar .bar-medium { background: var(--orange); }
+    .dist-bar .bar-high   { background: var(--red); }
+    .dist-legend { display: flex; gap: 16px; margin-top: 10px; font-size: 0.85rem; font-weight: 700; }
+    .legend-dot { width: 14px; height: 14px; border: 2px solid #000; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">BurnoutPredictor</a>
+  <ul class="navbar-links">
+    <li><a href="dashboard.html" class="btn btn-sm btn-secondary">Dashboard</a></li>
+    <li><a href="#" id="logout-btn" class="btn btn-sm btn-dark">Logout</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrapper">
+  <div class="container">
+    <h2 style="margin-bottom: 24px;">Admin Panel</h2>
+    <div id="access-denied" style="display:none;" class="alert alert-error">Akses ditolak. Halaman ini hanya untuk admin.</div>
+
+    <div id="admin-content">
+      <div class="grid-3" style="margin-bottom: 28px;">
+        <div class="stat-card card-yellow">
+          <span class="stat-number" id="total-users">—</span>
+          <span class="stat-label">Total User Terdaftar</span>
+        </div>
+        <div class="stat-card card-blue">
+          <span class="stat-number" id="total-predictions">—</span>
+          <span class="stat-label">Total Prediksi</span>
+        </div>
+        <div class="stat-card" style="background: var(--purple);">
+          <span class="stat-number" style="font-size:1.5rem;" id="top-level">—</span>
+          <span class="stat-label">Level Terbanyak</span>
+        </div>
+      </div>
+
+      <div class="card" style="max-width: 600px;">
+        <div class="card-title">Distribusi Burnout Level</div>
+        <div class="dist-bar" id="dist-bar">
+          <div class="bar-low"    id="bar-low"    style="width:0%"></div>
+          <div class="bar-medium" id="bar-medium" style="width:0%"></div>
+          <div class="bar-high"   id="bar-high"   style="width:0%"></div>
+        </div>
+        <div class="dist-legend">
+          <span><span class="legend-dot" style="background:var(--green)"></span>Low: <span id="pct-low">0</span>%</span>
+          <span><span class="legend-dot" style="background:var(--orange)"></span>Medium: <span id="pct-medium">0</span>%</span>
+          <span><span class="legend-dot" style="background:var(--red)"></span>High: <span id="pct-high">0</span>%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

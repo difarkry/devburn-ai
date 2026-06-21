@@ -1,0 +1,62 @@
+[
+  {
+    "section": "burnout_causes",
+    "content": "Burnout programmer biasanya dipicu oleh jam kerja yang tinggi, tekanan deadline yang terus-menerus, kurangnya kontrol atas pekerjaan, dan minimnya pengakuan atas kontribusi. Faktor lain termasuk lingkungan kerja yang tidak mendukung, kurangnya kejelasan peran, serta konflik antara nilai pribadi dan tuntutan pekerjaan.",
+    "keywords": ["jam kerja", "burnout", "kelelahan", "penyebab", "deadline", "tekanan", "stres", "beban kerja"]
+  },
+  {
+    "section": "burnout_symptoms",
+    "content": "Gejala burnout meliputi kelelahan ekstrem yang tidak hilang meski sudah istirahat, sinisme terhadap pekerjaan, merasa tidak efektif, sulit berkonsentrasi, mudah marah, sakit kepala sering, dan penurunan produktivitas. Gejala emosional seperti merasa terasing, kehilangan motivasi, dan apatis terhadap tugas juga umum terjadi.",
+    "keywords": ["gejala", "tanda", "kelelahan", "sinisme", "motivasi", "produktivitas", "konsentrasi", "burnout"]
+  },
+  {
+    "section": "sleep_recommendation",
+    "content": "Tidur 7–9 jam per malam sangat penting untuk pemulihan fisik dan mental programmer. Kurang tidur menyebabkan penurunan kemampuan kognitif, kesulitan memecahkan masalah, dan peningkatan risiko burnout. Disarankan untuk menjaga jadwal tidur yang konsisten dan menghindari layar minimal 30 menit sebelum tidur.",
+    "keywords": ["tidur", "istirahat", "sleep", "jam tidur", "pemulihan", "kognitif", "kesehatan"]
+  },
+  {
+    "section": "exercise_benefits",
+    "content": "Olahraga rutin minimal 30 menit per hari terbukti mengurangi stres, meningkatkan mood melalui pelepasan endorfin, dan meningkatkan kualitas tidur. Bagi programmer yang banyak duduk, aktivitas fisik juga penting untuk kesehatan fisik, postur, dan mencegah masalah muskuloskeletal. Olahraga ringan seperti jalan kaki atau peregangan sudah memberi manfaat signifikan.",
+    "keywords": ["olahraga", "exercise", "aktivitas fisik", "stres", "mood", "endorfin", "kesehatan fisik"]
+  },
+  {
+    "section": "caffeine_effects",
+    "content": "Kafein dalam jumlah moderat (1–3 cangkir kopi per hari) dapat meningkatkan fokus dan kewaspadaan sementara. Namun konsumsi berlebihan (lebih dari 4–5 cangkir per hari) menyebabkan kecemasan, gangguan tidur, ketergantungan, dan crash energi. Hindari kafein setelah pukul 14.00 untuk menjaga kualitas tidur.",
+    "keywords": ["kafein", "kopi", "caffeine", "fokus", "tidur", "kecemasan", "energi", "konsentrasi"]
+  },
+  {
+    "section": "meeting_overload",
+    "content": "Terlalu banyak rapat (lebih dari 4–5 per hari) adalah penyebab umum burnout programmer. Rapat yang tidak efisien memecah alur kerja deep work, mengurangi waktu untuk coding produktif, dan menyebabkan kelelahan mental. Solusinya termasuk: menetapkan blok waktu bebas rapat, meminta agenda rapat yang jelas, dan menolak rapat yang tidak relevan.",
+    "keywords": ["rapat", "meeting", "deep work", "produktivitas", "fokus", "beban kerja", "waktu"]
+  },
+  {
+    "section": "work_life_balance",
+    "content": "Keseimbangan kerja-hidup yang sehat adalah fondasi pencegahan burnout. Tetapkan batas waktu kerja yang jelas, hindari mengecek email atau pesan kerja di luar jam kerja, luangkan waktu untuk hobi dan keluarga. Remote work memperburuk batas ini karena kantor dan rumah menjadi satu tempat.",
+    "keywords": ["work life balance", "keseimbangan", "batas waktu", "remote work", "hobi", "keluarga", "burnout"]
+  },
+  {
+    "section": "recovery_strategies",
+    "content": "Pemulihan dari burnout membutuhkan waktu dan strategi aktif. Langkah pertama adalah mengakui kondisi burnout tanpa menyalahkan diri. Strategi pemulihan meliputi: mengambil cuti, mengurangi beban kerja sementara, berbicara dengan atasan atau HR, mencari dukungan profesional (psikolog/konselor), dan membangun rutinitas self-care yang konsisten.",
+    "keywords": ["pemulihan", "recovery", "cuti", "dukungan", "psikolog", "self care", "burnout", "strategi"]
+  },
+  {
+    "section": "mental_health_programmer",
+    "content": "Kesehatan mental programmer sering terabaikan karena budaya 'hustle' di industri teknologi. Tekanan untuk terus belajar teknologi baru, rasa impostor syndrome, dan perbandingan sosial memperburuk kesehatan mental. Penting untuk menormalisasi pembicaraan tentang mental health di tempat kerja dan mencari bantuan profesional jika diperlukan.",
+    "keywords": ["kesehatan mental", "mental health", "impostor syndrome", "stres", "psikologi", "dukungan", "programmer"]
+  },
+  {
+    "section": "productivity_tips",
+    "content": "Teknik produktivitas untuk programmer: gunakan metode Pomodoro (25 menit fokus, 5 menit istirahat), batasi multitasking karena menurunkan kualitas kode, prioritaskan tugas dengan metode Eisenhower Matrix, dan jaga inbox zero untuk mengurangi kecemasan. Deep work selama 2–4 jam tanpa gangguan lebih efektif daripada 8 jam kerja terfragmentasi.",
+    "keywords": ["produktivitas", "pomodoro", "fokus", "multitasking", "deep work", "tips", "efisiensi", "coding"]
+  },
+  {
+    "section": "screen_time_impact",
+    "content": "Waktu layar yang berlebihan (lebih dari 10 jam per hari) berdampak negatif pada kesehatan mata, postur tubuh, dan kesehatan mental. Terapkan aturan 20-20-20: setiap 20 menit, lihat objek berjarak 20 kaki selama 20 detik. Gunakan filter cahaya biru, atur tinggi monitor sejajar mata, dan lakukan peregangan leher dan punggung secara berkala.",
+    "keywords": ["layar", "screen time", "mata", "postur", "kesehatan", "cahaya biru", "ergonomi"]
+  },
+  {
+    "section": "bug_stress_management",
+    "content": "Debugging yang panjang dan bug yang sulit dipecahkan adalah sumber stres signifikan bagi programmer. Strategi mengelola stres debugging: ambil jeda 5–10 menit jika stuck lebih dari 30 menit, jelaskan masalah ke rubber duck (rubber duck debugging), minta bantuan rekan tanpa rasa malu, dan dokumentasikan solusi untuk referensi masa depan.",
+    "keywords": ["bug", "debugging", "stres", "pemecahan masalah", "rubber duck", "bantuan", "kolaborasi"]
+  }
+]

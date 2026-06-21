@@ -1,0 +1,40 @@
+services:
+  # ── Prediction Service (Python Flask) ──────────────────────────────────────
+  - type: web
+    name: burnout-prediction-service
+    runtime: python
+    rootDir: prediction_service
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+  # ── Backend (Node.js Express) ───────────────────────────────────────────────
+  - type: web
+    name: burnout-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRED
+        value: 1d
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASSWORD
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: PREDICTION_SERVICE_URL
+        sync: false
+      - key: FRONTEND_ORIGIN
+        sync: false
