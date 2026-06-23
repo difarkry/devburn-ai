@@ -75,7 +75,6 @@ async function sendMessage(req, res, next) {
     // Fetch all predictions with nama for LLM name-aware context
     const user = await User.findById(req.user.userId).select('name');
     const allPredictions = await Prediction.find({ userId: req.user.userId }).sort({ createdAt: -1 }).limit(20);
-
     // Extract unique names from data
     const namedPredictions = allPredictions.filter(p => p.nama && p.nama.trim());
     const availableNames = [...new Set(namedPredictions.map(p => p.nama.trim().toLowerCase()))];
@@ -113,25 +112,30 @@ async function sendMessage(req, res, next) {
     let finalConfidence = confidence;
     let finalSource = source;
 
-    if (false) {
-      assistantResponse = FALLBACK_MESSAGE;
-      finalConfidence = 0;
-      finalSource = null;
-    } else {
-      const systemPrompt = context
-        ? `${BASE_SYSTEM_PROMPT}\n\nKonteks relevan:\n${context}${predictionContext}`
-        : `${BASE_SYSTEM_PROMPT}${predictionContext}`;
-      try {
-        assistantResponse = await callGroqApi([
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: message }
-        ]);
-        // Strip markdown bold/italic
-        assistantResponse = assistantResponse.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1');
-      } catch (err) {
-        console.error('Groq API error:', err.message);
-        return res.status(503).json({ success: false, message: 'Layanan chat sedang tidak tersedia. Coba lagi nanti.', code: 'SERVICE_UNAVAILABLE' });
-      }
+    // Build conversation history for context-aware responses
+    const recentHistory = await ChatMessage.find({ userId: req.user.userId })
+      .sort({ createdAt: -1 })
+      .limit(10)
+      .lean();
+    const historyMessages = recentHistory.reverse().flatMap(m => [
+      { role: 'user', content: m.userMessage },
+      { role: 'assistant', content: m.assistantResponse }
+    ]);
+
+    const systemPrompt = context
+      ? `${BASE_SYSTEM_PROMPT}\n\nNama user yang sedang chat: ${user?.name || 'pengguna'}.\n\nKonteks relevan:\n${context}${predictionContext}`
+      : `${BASE_SYSTEM_PROMPT}\n\nNama user yang sedang chat: ${user?.name || 'pengguna'}.${predictionContext}`;
+
+    try {
+      assistantResponse = await callGroqApi([
+        { role: 'system', content: systemPrompt },
+        ...historyMessages,
+        { role: 'user', content: message }
+      ]);
+      assistantResponse = assistantResponse.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1');
+    } catch (err) {
+      console.error('Groq API error:', err.message);
+      return res.status(503).json({ success: false, message: 'Layanan chat sedang tidak tersedia. Coba lagi nanti.', code: 'SERVICE_UNAVAILABLE' });
     }
 
     await ChatMessage.create({

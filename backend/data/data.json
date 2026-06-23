@@ -55,8 +55,33 @@
     "keywords": ["layar", "screen time", "mata", "postur", "kesehatan", "cahaya biru", "ergonomi"]
   },
   {
-    "section": "bug_stress_management",
-    "content": "Debugging yang panjang dan bug yang sulit dipecahkan adalah sumber stres signifikan bagi programmer. Strategi mengelola stres debugging: ambil jeda 5–10 menit jika stuck lebih dari 30 menit, jelaskan masalah ke rubber duck (rubber duck debugging), minta bantuan rekan tanpa rasa malu, dan dokumentasikan solusi untuk referensi masa depan.",
-    "keywords": ["bug", "debugging", "stres", "pemecahan masalah", "rubber duck", "bantuan", "kolaborasi"]
+    "section": "quick_rest_recommendations",
+    "content": "Kalau lagi cape dan butuh istirahat cepat: coba jalan kaki 10 menit di luar ruangan untuk refresh pikiran, lakukan peregangan leher dan punggung selama 5 menit, minum segelas air putih karena dehidrasi sering bikin otak terasa berat, atau tidur siang 15-20 menit (power nap) yang terbukti meningkatkan fokus. Jauhkan diri dari layar minimal 10 menit dan lihat sesuatu yang hijau atau alam kalau bisa.",
+    "keywords": ["cape", "capek", "lelah", "istirahat", "jeda", "refresh", "rehat", "break", "bosan", "penat"]
+  },
+  {
+    "section": "stress_relief_activities",
+    "content": "Aktivitas yang terbukti mengurangi stres untuk programmer: mendengarkan musik instrumental atau lo-fi saat coding, berkebun atau merawat tanaman (bisa di meja kerja), memasak sesuatu yang sederhana, bermain game ringan selama 20-30 menit, membaca buku non-teknis, atau ngobrol santai dengan teman. Jangan remehkan aktivitas yang terlihat 'tidak produktif' karena otak butuh mode istirahat aktif.",
+    "keywords": ["stres", "aktivitas", "rileks", "hobi", "refreshing", "rekomendasi", "cara mengatasi", "hiburan", "senang"]
+  },
+  {
+    "section": "motivation_loss",
+    "content": "Kehilangan motivasi kerja atau belajar adalah tanda burnout yang sering diabaikan. Ini bukan kelemahan karakter. Cara membangun kembali motivasi: mulai dari task yang paling kecil dan mudah untuk dapat rasa pencapaian, ingat kembali kenapa awalnya pilih dunia tech, coba proyek sampingan yang menyenangkan tanpa tekanan, dan batasi perbandingan diri dengan orang lain di media sosial.",
+    "keywords": ["motivasi", "malas", "tidak semangat", "kehilangan semangat", "bosan", "stuck", "mentok", "tidak mood"]
+  },
+  {
+    "section": "deadline_pressure",
+    "content": "Tekanan deadline yang terus-menerus bisa menyebabkan kecemasan kronis dan burnout. Strategi menghadapinya: komunikasikan lebih awal ke atasan atau klien jika scope terlalu besar, pecah deadline besar jadi milestone kecil, prioritaskan fitur yang paling penting (MVP mindset), dan belajar bilang tidak pada task tambahan saat beban sudah penuh. Tidak semua deadline adalah darurat sejati.",
+    "keywords": ["deadline", "tenggat", "batas waktu", "tekanan", "terburu-buru", "overtime", "lembur", "target"]
+  },
+  {
+    "section": "loneliness_remote_work",
+    "content": "Kerja remote bisa terasa kesepian dan mengisolasi, terutama bagi programmer yang sudah jarang keluar rumah. Ini nyata dan valid. Cara mengatasinya: jadwalkan video call santai dengan rekan kerja bukan hanya untuk meeting formal, coba kerja dari kafe atau coworking space sesekali, ikut komunitas tech lokal atau online, dan pastikan ada interaksi sosial di luar lingkungan kerja minimal beberapa kali seminggu.",
+    "keywords": ["kesepian", "lonely", "sendirian", "remote", "WFH", "isolasi", "teman", "sosial", "komunikasi"]
+  },
+  {
+    "section": "impostor_syndrome",
+    "content": "Impostor syndrome sangat umum di kalangan programmer — merasa tidak cukup pintar, takut ketahuan tidak kompeten, atau merasa tidak pantas dengan posisi yang dimiliki. Ini dialami bahkan oleh senior developer. Ingat bahwa tidak ada yang tahu segalanya di dunia tech, bertanya dan googling adalah skill, dan pertumbuhan terjadi di zona ketidaknyamanan. Dokumentasikan pencapaianmu sekecil apapun untuk melawan pikiran negatif ini.",
+    "keywords": ["impostor", "tidak percaya diri", "tidak kompeten", "minder", "ragu", "insecure", "junior", "takut salah"]
   }
 ]
