@@ -1,0 +1,130 @@
+/* ===== Responsive — Mobile, Tablet, Laptop ===== */
+
+/* ── Hamburger button (hidden on desktop) ─────────────────────────── */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: var(--border-thick);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: var(--black);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+/* open state */
+.navbar-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.navbar-toggle.open span:nth-child(2) { opacity: 0; }
+.navbar-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ── Laptop (max 1100px) ───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .container { padding: 0 20px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Tablet (max 900px) ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .section { padding: 40px 0; }
+
+  .stat-number { font-size: 2rem; }
+
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+
+  .page-wrapper { padding: 28px 16px; }
+
+  /* chat page */
+  .chat-input-bar { padding: 12px 16px; }
+}
+
+/* ── Mobile (max 640px) ────────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  /* Navbar mobile */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 0;
+  }
+
+  .navbar-toggle { display: flex; }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 8px;
+    padding: 12px 0 4px;
+    border-top: var(--border);
+    margin-top: 10px;
+  }
+
+  .navbar-links.open { display: flex; }
+
+  .navbar-links li { width: 100%; }
+  .navbar-links li a,
+  .navbar-links li button {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  /* Grids → single column */
+  .grid-2,
+  .grid-3,
+  .grid-4 { grid-template-columns: 1fr; }
+
+  /* Section padding */
+  .section { padding: 28px 0; }
+  .container { padding: 0 14px; }
+  .page-wrapper { padding: 20px 14px; }
+
+  /* Typography */
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.4rem !important; }
+
+  /* Stat cards */
+  .stat-number { font-size: 1.8rem; }
+
+  /* Card padding */
+  .card { padding: 18px 16px; }
+
+  /* Buttons */
+  .btn-lg { padding: 12px 20px; font-size: 1rem; }
+
+  /* Table */
+  .nb-table th, .nb-table td { padding: 8px 10px; font-size: 0.82rem; }
+
+  /* Toast */
+  .toast-container { right: 10px; left: 10px; }
+  .toast { min-width: unset; width: 100%; }
+
+  /* Forms */
+  .form-control { font-size: 1rem; }
+
+  /* Chat */
+  .chat-bubble { max-width: 90%; }
+  .chat-input-bar { padding: 10px 12px; gap: 8px; }
+  .chat-input-bar input { font-size: 0.9rem; }
+
+  /* Hero section text */
+  .hero-title { font-size: 2rem; }
+}
+
+/* ── Very small (max 380px) ────────────────────────────────────────── */
+@media (max-width: 380px) {
+  .navbar-brand { font-size: 1.1rem; }
+  h1 { font-size: 1.6rem !important; }
+  .btn { padding: 8px 14px; font-size: 0.85rem; }
+}

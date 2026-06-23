@@ -6,11 +6,15 @@
   <title>Prediksi Burnout — BurnoutPredictor</title>
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
 </head>
 <body>
 <nav class="navbar">
   <a href="index.html" class="navbar-brand">BurnoutPredictor</a>
-  <ul class="navbar-links">
+  <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="navbar-links" id="navbar-links">
     <li><a href="dashboard.html" class="btn btn-sm btn-secondary">Dashboard</a></li>
     <li><a href="#" id="logout-btn" class="btn btn-sm btn-dark">Logout</a></li>
   </ul>
@@ -20,9 +24,7 @@
   <div class="container" style="max-width: 700px;">
     <h2 style="margin-bottom: 8px;">Prediksi Burnout</h2>
     <p style="margin-bottom: 24px; font-size: 0.9rem;">Isi data kebiasaan kerjamu untuk mendapatkan prediksi tingkat burnout.</p>
-
     <div id="alert-box"></div>
-
     <form id="predict-form" novalidate>
       <div class="form-group" style="margin-bottom: 18px;">
         <label class="form-label" for="nama">Nama (opsional)</label>
@@ -34,7 +36,7 @@
           <input class="form-control" type="number" id="age" min="18" max="80" placeholder="25" required />
         </div>
         <div class="form-group">
-          <label class="form-label" for="experience_years">Pengalaman Kerja (0–50 tahun)</label>
+          <label class="form-label" for="experience_years">Pengalaman Kerja (0–50 thn)</label>
           <input class="form-control" type="number" id="experience_years" min="0" max="50" placeholder="3" required />
         </div>
         <div class="form-group">
@@ -46,7 +48,7 @@
           <input class="form-control" type="number" id="sleep_hours" min="1" max="12" step="0.5" placeholder="7" required />
         </div>
         <div class="form-group">
-          <label class="form-label" for="caffeine_intake">Konsumsi Kafein/Hari (0–20 cangkir)</label>
+          <label class="form-label" for="caffeine_intake">Kafein/Hari (0–20 cangkir)</label>
           <input class="form-control" type="number" id="caffeine_intake" min="0" max="20" placeholder="2" required />
         </div>
         <div class="form-group">
@@ -70,7 +72,7 @@
           <input class="form-control" type="number" id="exercise_hours" min="0" max="12" step="0.5" placeholder="0.5" required />
         </div>
       </div>
-      <div style="display: flex; gap: 12px; margin-top: 8px;">
+      <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
         <button type="button" id="reset-btn" class="btn btn-secondary">Reset Form</button>
         <button type="submit" class="btn btn-primary" id="submit-btn">Prediksi Sekarang</button>
       </div>
@@ -80,6 +82,7 @@
 
 <script src="../js/config.js"></script>
 <script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
 <script src="../js/predict.js"></script>
 </body>
 </html>

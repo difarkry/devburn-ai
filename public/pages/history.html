@@ -6,11 +6,15 @@
   <title>Riwayat Prediksi — BurnoutPredictor</title>
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
 </head>
 <body>
 <nav class="navbar">
   <a href="index.html" class="navbar-brand">BurnoutPredictor</a>
-  <ul class="navbar-links">
+  <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="navbar-links" id="navbar-links">
     <li><a href="dashboard.html" class="btn btn-sm btn-secondary">Dashboard</a></li>
     <li><a href="predict.html" class="btn btn-sm btn-primary">+ Prediksi</a></li>
     <li><a href="#" id="logout-btn" class="btn btn-sm btn-dark">Logout</a></li>
@@ -21,10 +25,10 @@
   <div class="container">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
       <h2>Riwayat Prediksi</h2>
-      <div style="display:flex; gap: 10px;">
+      <div style="display:flex; gap: 10px; flex-wrap: wrap;">
         <button id="delete-all" class="btn btn-danger btn-sm" disabled>Hapus Semua</button>
-        <button id="export-csv" class="btn btn-secondary btn-sm" disabled title="Tidak ada data untuk diekspor">Export CSV</button>
-        <button id="export-pdf" class="btn btn-dark btn-sm" disabled title="Tidak ada data untuk diekspor">Export PDF</button>
+        <button id="export-csv" class="btn btn-secondary btn-sm" disabled>Export CSV</button>
+        <button id="export-pdf" class="btn btn-dark btn-sm" disabled>Export PDF</button>
       </div>
     </div>
 
@@ -59,6 +63,7 @@
 
 <script src="../js/config.js"></script>
 <script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
 <script src="../js/history.js"></script>
 </body>
 </html>
